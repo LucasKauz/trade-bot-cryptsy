@@ -33,7 +33,7 @@ Valor cobrado pela exchange por cada transação ( em porcentagem ), no caso do 
 
 $tempo
 
-Tempo em minutos que uma ordem de compra fica ativa antes de ser refeita.
+Tempo em minutos que uma ordem de compra fica ativa antes de ser refeita. Lembre-se que esse valor deve ser menor do que o max_execution_time do seu php.ini
 
 $alt_ticker
 
