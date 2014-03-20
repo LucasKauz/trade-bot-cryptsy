@@ -35,6 +35,31 @@ $tempo
 
 Tempo em minutos que uma ordem de compra fica ativa antes de ser refeita.
 
+$alt_ticker
+
+Abreviação da moeda ( ticker )
+
+exemplos:
+
+  AuroraCoin "AUR"
+  Doge       "DOGE"
+  
+$alt_id
+
+Id do mercado da altcoin ver em https://www.cryptsy.com/markets/view/[ id do mercado ]
+
+exemplos
+
+  AuroraCoin 160
+  Doge       132
+  
+$max_tranding_value
+
+Máximo que será investido
+
+$trading_value
+
+Mínimo que será investido
 
 
 Dicas:
