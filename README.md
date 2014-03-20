@@ -4,6 +4,7 @@
 Trade bot para cryptsy, qualquer altcoin.
 
 
+
 Uso:
 ==============
 
@@ -55,7 +56,7 @@ exemplos
   
 $max_tranding_value
 
-Máximo que será investido
+Máximo que será investido, deixe 0 para ilimitado
 
 $trading_value
 
