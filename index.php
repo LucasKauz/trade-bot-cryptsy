@@ -44,6 +44,9 @@ $servidor = array();
 # Minimum BTC for trading
 $trading_value = 0.0025;
 
+# Maximum BTC for trading
+$max_tranding_value = 0;
+
 # Exchange fee ( percentage value )
 $fee = 0.3;
 
@@ -153,6 +156,10 @@ try {
 
 if($trading < $trading_value) {
    RefazerTrade("Você não tem valor de ".$alt_ticker." ou BTCs suficiente para trade!");
+}
+
+if( $max_tranding_value !== 0 && $trading > $max_tranding_value ){
+	$trading = $max_tranding_value;
 }
 
 # Get the buy and sell altcoin price
