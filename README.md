@@ -1,4 +1,4 @@
-[BETA] Bitcoin Trade BOT (cryptsy)
+[BETA] Cryptsy Trade BOT (qualquer altcoin)
 ==============
 
 Trade bot para cryptsy, qualquer altcoin.
