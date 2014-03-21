@@ -188,11 +188,17 @@ if($lucro < $prejuizo)  {
 	goto recalcular;
 }
 
+# Altcoin quantity
+$comprarbtc_nofee =  GetAltcoinAmmount($trading, $min) ;
+$comprarbtc = GetAltcoinFreeFee($comprarbtc_nofee,$fee);
+
 ?>
 
 
 <div id="info_block">
 	<h3>[ALGORÍTIMO PARA PROCURA DE LUCRO]</h3>
+	<p><span>Comprando</span>  <b><?php echo $comprarbtc.' '.$alt_ticker; ?></b></p>
+	<p><span>Preço da ordem</span>  <b><?php echo number_format($min*$comprarbtc,8); ?> BTC</b></p>
 	<p><span>Estimativa de lucro</span>    <b><?php echo $lucro; ?> BTC</b>
 	<p><span>Estimativa de prejuizo</span> <b><?php echo $prejuizo; ?> BTC</b>
 	<h2>Valores</h2>
@@ -202,10 +208,6 @@ if($lucro < $prejuizo)  {
 
 
 <?php
-
-# Altcoin quantity
-$comprarbtc_nofee =  GetAltcoinAmmount($trading, $min) ;
-$comprarbtc = GetAltcoinFreeFee($comprarbtc_nofee,$fee);
 
 # Open buy order
 $oid = @ComprarAltcoins( $min, $comprarbtc,$alt_id );
