@@ -42,7 +42,7 @@ Abreviação da moeda ( ticker )
 
 exemplos:
 
-  AuroraCoin "AUR"
+  AuroraCoin "AUR" |
   Doge       "DOGE"
   
 $alt_id
@@ -51,7 +51,7 @@ Id do mercado da altcoin ver em https://www.cryptsy.com/markets/view/[ id do mer
 
 exemplos
 
-  AuroraCoin 160
+  AuroraCoin 160 |
   Doge       132
   
 $max_tranding_value
