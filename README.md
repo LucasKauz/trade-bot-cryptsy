@@ -75,3 +75,10 @@ Tenha paciência, algumas ordens podem levar vários minutos para fechar. E o lu
 
 Criado baseado no trabalho de ipsBruno
 github.com/ipsBruno/trade-bot-btce
+
+
+FAQ:
+==============
+
+Consigo usar a coin com mais de uma moeda simultâneamente?
+Sim, você precisa duplicar o arquivo "index.php", renome-lo e o editar para sua outra coin. Depois você precisa apenas executar ele em nova aba.
