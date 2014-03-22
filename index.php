@@ -21,6 +21,14 @@ header('Content-Type: text/html; charset=utf-8');
 $key = '';
 $secret = '';
 
+if( empty($key) || empty($secret) ){
+	echo '<div style="font-family:Arial, Helvetica">
+	<h3>API secret e chave do cryptsy precisam estar configurados.</h3>
+	<h4>Insira essas informações em index.php e atualize esta página.</h4>
+	</div>';
+	die;
+}
+
  
 $Cryptsy = new CryptsyAPI($key, $secret);
 
