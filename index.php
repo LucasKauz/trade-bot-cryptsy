@@ -169,24 +169,22 @@ $max  = $servidor['alt_ticker']["sellorders"][0]['price'];
 $min  = $servidor['alt_ticker']["buyorders"][0]['price'];
 
 
-if($max < $min)  RefazerTrade("Valor nao encontrado");
-
-recalcular:
-# Format the number
-$max 		= number_format($max,8);
-$min 		= number_format($min,8);
-$lucro 		= number_format($max - $min,8);
-$prejuizo 	= number_format( ($max * $fee / 100) + ($min * $fee / 100),8);
-
-//echo "Rodada:<br> Minimo > $min <br> Maximo > $max <br> Prejuizo > $prejuizo <br> Lucro > $lucro <br> ";
-;
-
-# If the profit is lower than the loss we need to add the quantity specified above
-if($lucro < $prejuizo)  {
-	$max += $addPrice;
-	$min -= $addPrice;
-	goto recalcular;
+if($max < $min){
+	RefazerTrade("Valor nao encontrado");
 }
+
+$recalcular = recalcular($max,$min,$fee);
+
+while ( $recalcular['lucro'] > $recalcular['prejuizo'] ){
+	$recalcular['max'] += $addPrice;
+	$recalcular['min'] -= $addPrice;
+	recalcular($recalcular['max'],$recalcular['min'],$fee);
+}
+
+$min 		= $recalcular['min'];
+$max 		= $recalcular['max'];
+$lucro 		= $recalcular['lucro'];
+$prejuizo 	= $recalcular['prejuizo'];
 
 # Altcoin quantity
 $comprarbtc_nofee =  GetAltcoinAmmount($trading, $min) ;
@@ -360,6 +358,13 @@ function RefazerTrade($motivo) {
    die($motivo);
 }
  
- 
+function recalcular($max,$min,$fee){
+	$data['max'] 		= number_format($max,8);
+	$data['min'] 		= number_format($min,8);
+	$data['lucro'] 		= number_format($max - $min,8);
+	$data['prejuizo'] 	= number_format( ($max * $fee / 100) + ($min * $fee / 100),8);
+	return $data;
+}
+
 ?>
 </body>
